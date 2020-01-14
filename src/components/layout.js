@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -28,7 +28,7 @@ const MainLayout = styled.main`
 `;
 
 const Layout = ({ children, location }) => {
-  export const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
           description
           author
         }
-      };
+      }
       file(relativePath: {regex: "/bg/"}) {
         childImageSharp {
           fluid(maxWidth: 1000) {
@@ -88,7 +88,7 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
-  location = {},
+  location: {},
 };
 
 export default Layout;
