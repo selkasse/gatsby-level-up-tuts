@@ -1,6 +1,6 @@
 ---
-slug: "/second-post"
-title: "Second Post"
+slug: "/third-post"
+title: "Third Post"
 date: "2020-01-15"
 ---
 
