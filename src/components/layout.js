@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from 'gatsby'
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { Spring } from 'react-spring/renderprops'
@@ -25,10 +25,10 @@ const MainLayout = styled.main`
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 40px; 
-`
+`;
 
 const Layout = ({ children, location }) => {
-  export const data = graphql`
+  export const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
           description
           author
         }
-      }
+      };
       file(relativePath: {regex: "/bg/"}) {
         childImageSharp {
           fluid(maxWidth: 1000) {
@@ -45,7 +45,7 @@ const Layout = ({ children, location }) => {
         }
       }
     }
-  `;
+  `);
 
   return (
     <div>
@@ -85,11 +85,11 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 Layout.defaultProps = {
-  location = {}
-}
+  location = {},
+};
 
-export default Layout
+export default Layout;
 
