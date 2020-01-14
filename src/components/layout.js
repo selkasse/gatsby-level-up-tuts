@@ -7,8 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-// import { graphql } from 'gatsby'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+// import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { Spring } from 'react-spring/renderprops'
@@ -28,7 +28,7 @@ const MainLayout = styled.main`
 `
 
 const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
+  export const data = graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -45,7 +45,7 @@ const Layout = ({ children, location }) => {
         }
       }
     }
-  `);
+  `;
 
   return (
     <div>
