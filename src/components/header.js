@@ -7,7 +7,7 @@ import gatsbyLogo from '../images/gatsby-icon.png'
 
 const HeaderWrapper = styled.div`
   background: #524763;
-  // margin-bottom: 1.45rem;
+  margin-bottom: 1.45rem;
 
   // img {
   //   width: 100px;
@@ -20,7 +20,6 @@ const HeaderContainer = styled.div`
   margin: 0 auto;        
   max-width: 960px;
   padding: .5rem 1rem 1rem 1rem;
-
 `
 
 const Header = ({ siteTitle, author }) => (

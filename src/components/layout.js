@@ -7,12 +7,10 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-// import { graphql } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { Spring } from 'react-spring/renderprops'
-// import { Spring } from 'react-spring'
 
 import Header from "./header"
 import Archive from "./archive"
@@ -48,14 +46,14 @@ const Layout = ({ children, location }) => {
   `);
 
   return (
-    <div>
+    <>
       <Header 
         siteTitle={data.site.siteMetadata.title}
         author={data.site.siteMetadata.author}
       />
       <Spring
-        from={{height: location.pathname === '/' ? 100:200}}
-        to={{height: location.pathname === '/' ? 200:100}}  
+        from={{height: location.pathname === '/' ? 100:400}}
+        to={{height: location.pathname === '/' ? 400:100}}  
       >
         {styles => (
           <div style={{overflow: 'hidden', ...styles}}> 
@@ -79,7 +77,7 @@ const Layout = ({ children, location }) => {
         </MainLayout>
 
       </div>
-    </div>
+    </>
   );
 }
 
